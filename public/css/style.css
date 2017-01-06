@@ -1,0 +1,140 @@
+			* {
+			  margin: 0;
+			}
+
+			body {
+				display: flex;
+				flex-flow: column;
+			}
+
+			.site-header {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				background: #663300;
+				height: 55px;
+			}
+
+			.logolocation {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				background: #663300;
+			}
+			
+			.linkicons {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-end;
+				list-style-type: none;
+				font-size: 1.5em;
+				letter-spacing: 0.5em;
+			}
+			
+			.linkicons--colorwhite {
+				color: white;
+				/*text-shadow: 2px 2px black;*/
+			}
+
+			.linkicons-colorblack {
+				color: black;
+			}
+
+			.overviewbackground {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-around;
+				background-image: url('/images/Awesome-Forest-Wallpaper.jpg'); 
+			}
+
+			.transparency {
+				display: flex;
+				flex-flow: column wrap;
+				justify-content: space-around;
+				background: rgba(255, 255, 255, 0.5);
+				/* box-shadow: 2.5px 2.5px 0.5px #888888; */
+				padding: 10px;
+				width: 250px;
+				height: 200px;
+				margin-top: 20px;
+				margin-bottom: 50px;
+			}
+			
+			.transparency__textcontent {
+				list-style-type: none;
+				align-content: center;
+				color: #ffff1a;
+				font-family: 'PT Sans Narrow', sans-serif;
+				text-shadow: 2px 2px black;
+				font-size: 2.0em;
+				text-align: center;
+			}
+
+			.site-footer {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				background: black;
+				height: 55px;
+				margin-top: auto;
+			}
+
+			.media {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				margin-top: 5px;
+			}
+
+			.media:nth-of-type(even) {
+				background: #d9d9d9;
+			}
+
+			.media:nth-of-type(odd) .media__figure:nth-of-type(1) {
+				order: 1;
+			}
+
+			.media:nth-of-type(even) .media__figure:nth-last-of-type(2) {
+				order: 1;
+			}
+
+			.media:nth-of-type(even) .media__figure:nth-of-type(2) {
+				order: 3;
+			}
+
+			.media__heading {
+			  list-style: none;
+			  display: flex;
+			  justify-content: space-between;
+			  flex-wrap: nowrap;
+			  font-family: 'PT Sans Narrow', sans-serif;
+			  font-size: 150%;
+    	}
+
+			.media__body {
+			  display: flex;  
+			  flex-direction: row;
+			  text-align: left;
+			  padding: 0em;
+			}
+			
+			.media__text {
+			  padding: 0.5em;
+			  font-family: 'PT Sans Narrow', sans-serif;
+			  order: 2;
+			}
+
+			.media__footer {
+				display: flex;
+				margin: 0px;
+				font-family: 'PT Sans Narrow', sans-serif;
+				letter-spacing: 0.5em;
+			}
+
+			.media__figure {
+				display: flex;
+				flex-direction: row;
+				max-height: 300px;
+				max-width: 400px;
+				order: 3;
+			}
