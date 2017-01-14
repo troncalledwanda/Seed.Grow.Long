@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('trees');
+    $content = App\State::with('images')->get();
+    return view('trees')->with('content', $content);
 });
 
 Route::get('groot', function () {

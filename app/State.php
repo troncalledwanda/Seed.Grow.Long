@@ -8,6 +8,6 @@ class State extends Model
 {
     public function images()
     {
-    	return $this->hasMany('App/images');
+    	return $this->hasMany('App\Image');
     }
 }
