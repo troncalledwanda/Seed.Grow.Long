@@ -18,3 +18,7 @@ Route::get('state/create', 'StateController@create');
 Route::post('state/post', 'StateController@store');
 
 Route::get('state/{id}', 'StateController@show');
+
+Route::get('state/{id}/edit', 'StateController@edit');
+
+Route::patch('state/{id}', 'StateController@update');

@@ -2,17 +2,20 @@
 
 @section('content')
 
-<h1> Create State </h1>
+<h1> Edit State </h1>
 
-<form method="POST" action="post">
-  {{ csrf_field() }}
-    <h1>Title</h1>
+<form method="POST" action="/state/{{ $id->id }}">
+	{{ csrf_field() }}
+
+	{{ method_field('PATCH') }}
+
+
+    <h2>Title</h2>
       <textarea name="title"></textarea>
-    <h1>Quote</h1>
+    <h2>Quote</h2>
       <textarea name="quote"></textarea>
-    <h1>Paragraph</h1>
+    <h2>Paragraph</h2>
       <textarea name="paragraph"></textarea>
     <button type="submit">Create</button>
 </form>
-
 @stop
