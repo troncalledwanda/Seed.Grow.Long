@@ -11,22 +11,10 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    $content = App\State::with('images')->get();
-    return view('index')->with('content', $content);
-}); 
-
-
-Route::get('create', function () {
-    return view('create');
-});
-*/ 
-
-// Route::post('add', 'StateController@store');
-
 Route::get('state', 'StateController@index');
 
 Route::get('state/create', 'StateController@create');
 
 Route::post('state/post', 'StateController@store');
+
+Route::get('state/{id}', 'StateController@show');

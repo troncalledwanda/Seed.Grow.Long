@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\State;
 use Illuminate\Http\Request;
 
 class StateController extends Controller
@@ -14,7 +15,7 @@ class StateController extends Controller
     public function index()
     {
         //
-        $content = App\State::with('images')->get();
+        $content = State::with('images')->get();
         return view('index')->with('content', $content);
     }
 
@@ -26,6 +27,7 @@ class StateController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -53,9 +55,10 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(State $id)
     {
-        //
+        //return view('show', compact('id'));
+        return $id;
     }
 
     /**

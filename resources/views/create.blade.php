@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="overviewbackground">
-  <form method="POST" action="add">
+  <form method="POST" action="post">
   {{ csrf_field() }}
     <ul class="transparency transparency__textcontent">
       <li><label>Title</label></li>
