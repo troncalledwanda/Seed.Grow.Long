@@ -22,3 +22,5 @@ Route::get('state/{id}', 'StateController@show');
 Route::get('state/{id}/edit', 'StateController@edit');
 
 Route::patch('state/{id}', 'StateController@update');
+
+Route::delete('state/{id}', 'StateController@destroy');

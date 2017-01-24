@@ -84,7 +84,7 @@ class StateController extends Controller
     {
         //
         $id->update($request->all());
-        return view('state');
+        return back();
     }
 
     /**
@@ -93,8 +93,11 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(State $id)
     {
         //
+        $id->delete();
+        $content = State::with('images')->get();
+        return view('index')->with('content', $content);
     }
 }
