@@ -4,7 +4,7 @@
 
 <h1> Edit State </h1>
 
-<form method="POST" action="/state/{{ $id->id }}">
+<form method="POST" action="/state/{{ $state->id }}">
 
 	{{ method_field('PATCH') }}
 
@@ -21,7 +21,7 @@
 
 <h1> Delete State </h1>
 
-<form method="POST" action="/state/{{ $id->id }}">
+<form method="POST" action="/state/{{ $state->id }}">
 
 	{{ method_field('DELETE') }}
 

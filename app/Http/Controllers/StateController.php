@@ -39,7 +39,7 @@ class StateController extends Controller
     public function store(Request $request)
     {
         //
-        $state = new \App\State;
+        $state = new State;
         $state->title = $request->title;
         $state->quote = $request->quote;
         $state->paragraph = $request->paragraph;
@@ -55,10 +55,10 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(State $id)
+    public function show(State $state)
     {
         //return view('show', compact('id'));
-        return $id;
+        return $state;
     }
 
     /**
@@ -67,10 +67,10 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(State $id)
+    public function edit(State $state)
     {
         //
-        return view('edit', compact('id'));
+        return view('edit', compact('state'));
     }
 
     /**
@@ -80,11 +80,11 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, State $id)
+    public function update(Request $request, State $state)
     {
         //
-        $id->update($request->all());
-        return back();
+        $state->update($request->all());
+        return redirect()->route('state.index');
     }
 
     /**
@@ -93,11 +93,10 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(State $id)
+    public function destroy(State $state)
     {
         //
-        $id->delete();
-        $content = State::with('images')->get();
-        return view('index')->with('content', $content);
+        $state->delete();
+        return redirect()->route('state.index');
     }
 }

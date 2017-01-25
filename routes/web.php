@@ -11,16 +11,4 @@
 |
 */
 
-Route::get('state', 'StateController@index');
-
-Route::get('state/create', 'StateController@create');
-
-Route::post('state/post', 'StateController@store');
-
-Route::get('state/{id}', 'StateController@show');
-
-Route::get('state/{id}/edit', 'StateController@edit');
-
-Route::patch('state/{id}', 'StateController@update');
-
-Route::delete('state/{id}', 'StateController@destroy');
+Route::resource('state', 'StateController');

@@ -4,7 +4,7 @@
 
 <h1> Create State </h1>
 
-<form method="POST" action="post">
+<form method="POST" action="/state">
   {{ csrf_field() }}
     <h1>Title</h1>
       <textarea name="title"></textarea>
