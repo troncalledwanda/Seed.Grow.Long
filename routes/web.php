@@ -12,3 +12,7 @@
 */
 
 Route::resource('state', 'StateController');
+
+Route::get('todo', function () {
+    return view('todos');
+});
