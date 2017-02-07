@@ -1,9 +1,19 @@
-<head>  
+@extends('layouts.layout')
+
+@section('page-specific-styles')
   <link rel="stylesheet" href="{{ URL::asset('css/index.css') }}" />
-  <link rel="stylesheet" href="{{ URL::asset('css/vuestyle.css') }}">
-  <script type="text/javascript" src="{{ URL::asset('js/vue.js') }}"></script>
-</head>
-<body>
+  <style> 
+  body{max-width: 100%;}
+  .site-header{margin-bottom: 100px;}
+  .info{display: none;}
+  </style>
+@stop
+
+@section('page-specific-scripts')
+  <script type="text/javascript" src="{{ URL::asset('js/tovuedo.js') }}"></script>
+@stop
+@section('content')
+
       <section class="todoapp">
         <header class="header">
           <h1>todos</h1>
@@ -48,10 +58,10 @@
           </button>
         </footer>
       </section>
-  <script type="text/javascript" src="{{ URL::asset('js/tovuedo.js') }}"></script>
-</body>
+
 <footer class="info">
   <p>Double-click to edit a todo</p>
   <p>Written by <a href="http://evanyou.me">Evan You</a></p>
   <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 </footer>
+@stop

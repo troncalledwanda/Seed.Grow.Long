@@ -16,7 +16,7 @@ class StateController extends Controller
     {
         //
         $content = State::with('images')->get();
-        return view('index')->with('content', $content);
+        return view('state')->with('content', $content);
     }
 
     /**

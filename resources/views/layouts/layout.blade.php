@@ -1,4 +1,4 @@
-</!DOCTYPE html>
+x</!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -7,10 +7,21 @@
 
         <title>Seed.Grow.Long.</title>
 			
+
 			<link rel="stylesheet" href="/css/style.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-			<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+			<link rel="stylesheet" href="{{ URL::asset('css/vuestyle.css') }}">
+			@yield('page-specific-styles')
 
+			<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+			@yield('page-specific-fonts')
+
+			<script type="text/javascript" src="{{ URL::asset('js/vue.js') }}"></script>
+			@yield('page-specific-frameworks')
+
+
+
+		
 		</head>
 
 
@@ -41,6 +52,7 @@
 			  		<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
 			  	</ul>
 			</footer>
+			@yield('page-specific-scripts')
 
 		</body>
 

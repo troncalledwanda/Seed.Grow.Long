@@ -13,6 +13,8 @@
 
 Route::resource('state', 'StateController');
 
-Route::get('todo', function () {
-    return view('todos');
-});
+Route::get('/', function () { return view('index')->with('content', App\State::with('images')->get());});
+
+Route::get('groot', function () { return view('groot');});
+
+Route::get('todo', function () {return view('todos');});
