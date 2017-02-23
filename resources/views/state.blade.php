@@ -9,10 +9,9 @@ var demo = new Vue({
 
   el: '#myTable',
   methods:  {
-    deleteRow: function (event) {
       event.target.closest('tr').remove();
       var xhr = new XMLHttpRequest();
-      xhr.open('DELETE', '{{{ route('state.destroy', ['id' => 2]) }}}' );
+      xhr.setRequestHeader('X-CSRF-TOKEN', '{{ csrf_token() }}');
       xhr.onload = function(){
        alert('Done deleting from database.');
       }
@@ -36,11 +35,6 @@ var demo = new Vue({
     <td>{{{$currentState->title}}}</td>
     <td>{{{$currentState->images->count()}}}</td>
     <td><a href="{{ route('state.edit', ['id' => $currentState->id]) }}">Edit</td>
-
-    <td>
-
-      <button v-on:click='deleteRow'>Delete</button>
-      </td>
     </tr>
   @endforeach
     </table>

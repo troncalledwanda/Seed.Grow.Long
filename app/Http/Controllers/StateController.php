@@ -70,7 +70,8 @@ class StateController extends Controller
     public function edit(State $state)
     {
         //
-        return view('edit', compact('state'));
+        if (Request::ajax()) return json_encode($state);
+        else return view('edit', compact('state'));
     }
 
     /**
@@ -84,7 +85,7 @@ class StateController extends Controller
     {
         //
         $state->update($request->all());
-        return redirect()->route('state.index');
+        //return redirect()->route('state.index');
     }
 
     /**
@@ -93,10 +94,10 @@ class StateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(State $state)
+    public function destroy(Request $request, State $state)
     {
-        //
         $state->delete();
-        return redirect()->route('state.index');
+        if ($request->ajax()) return json_encode(State::all());
+        else return redirect()->route('state.index');
     }
 }
